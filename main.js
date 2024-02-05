@@ -45,7 +45,6 @@ createApp({
             this.emails = this.emails.concat(emails)
             console.log(this.emails)
         })
-        },
-        
+        }
     }
 }).mount("#app")

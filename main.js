@@ -19,13 +19,15 @@ createApp({
     },
     methods:{
         callMail(){
-            axios
+            for(i = 0; i < 10; i++){
+                axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(response => {
             const newEmail = response.data.response
             this.emails.push(newEmail)
             console.log(newEmail)
             })
+            }
         }
     }
 }).mount("#app")

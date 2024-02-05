@@ -18,7 +18,9 @@
 <body class="p-5">
 
     <div id="app" class="p-5">
-        <button class="btn btn-success" @click="callMail">Press me!</button>
+        <div>
+            <button class="btn btn-success" @click="callMail">Press me!</button>
+        </div>
         <div
         v-for="(email, index) in emails"
         :key="index">

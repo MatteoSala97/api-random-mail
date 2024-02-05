@@ -27,7 +27,7 @@ createApp({
             this.emails.push(newEmail)
             console.log(newEmail)
             })
-            }
+        }
         }
     }
 }).mount("#app")

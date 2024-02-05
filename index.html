@@ -18,10 +18,11 @@
 <body class="p-5">
 
     <div id="app" class="p-5">
+        <h1 class="text-primary ">Random email generator</h1>
         <div>
             <button class="btn btn-success" @click="callMail">Press me!</button>
         </div>
-        <div
+        <div class="mt-4"
         v-for="(email, index) in emails"
         :key="index">
             <p>

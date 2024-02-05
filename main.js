@@ -25,15 +25,27 @@ createApp({
     },
     methods:{
         callMail(){
+
+            // array to store api promises
+            const apiPromises = []
+
+            //cycle for 10 emails
             for(i = 0; i < 10; i++){
+                const promise = 
                 axios
-            .get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then(response => {
-            const newEmail = response.data.response
-            this.emails.push(newEmail)
-            console.log(newEmail)
-            })
+                .get("https://flynn.boolean.careers/exercises/api/random/mail")
+                .then(response => {
+                    return response.data.response
+                })
+            apiPromises.push(promise)
         }
-        }
+
+        Promise.all(apiPromises)
+        .then(emails => {
+            this.emails = this.emails.concat(emails)
+            console.log(this.emails)
+        })
+        },
+        
     }
 }).mount("#app")
